@@ -47,10 +47,12 @@
     <Compile Include="Enum\EnumPermissionCode.cs" />
     <Compile Include="Enum\EnumPermissionType.cs" />
     <Compile Include="Enum\EnumYesOrNot.cs" />
+    <Compile Include="ResultModel\Result.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DBModel\Role.cs" />
     <Compile Include="DBModel\User.cs" />
     <Compile Include="DBModel\UserGroup.cs" />
+    <Compile Include="ResultModel\ResultType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />

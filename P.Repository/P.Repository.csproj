@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{04C4C1F3-F0A5-428F-8855-9EB65EFC3F4C}</ProjectGuid>
+    <ProjectGuid>{F30C0898-408A-495F-86CB-0CA337EF3828}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>P.PContext</RootNamespace>
-    <AssemblyName>P.PContext</AssemblyName>
+    <RootNamespace>P.Repository</RootNamespace>
+    <AssemblyName>P.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,29 +33,12 @@
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.10.7\lib\net452\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entity.6.10.7\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Design" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,38 +47,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseContext.cs" />
-    <Compile Include="ContextFactory.cs" />
-    <Compile Include="Extensions\DbContextExtensions.cs" />
-    <Compile Include="Interface\IRepository.cs" />
-    <Compile Include="Interface\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201808030703154_init mysql.cs" />
-    <Compile Include="Migrations\201808030703154_init mysql.Designer.cs">
-      <DependentUpon>201808030703154_init mysql.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Impl\ModuleRepository.cs" />
+    <Compile Include="Impl\PermissionRepository.cs" />
+    <Compile Include="Impl\RoleRepository.cs" />
+    <Compile Include="Impl\UserGroupRepository.cs" />
+    <Compile Include="Impl\UserRepository.cs" />
+    <Compile Include="Interface\IModuleRepository.cs" />
+    <Compile Include="Interface\IPermissionRepository.cs" />
+    <Compile Include="Interface\IRoleRepository.cs" />
+    <Compile Include="Interface\IUserGroupRepository.cs" />
+    <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryBase.cs" />
-    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\P.Common\P.Common.csproj">
-      <Project>{52DCEED0-5F51-4505-B11B-4FBCAA9ABA42}</Project>
-      <Name>P.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\P.Model\P.Model.csproj">
       <Project>{F3FCDCCC-6E26-4621-9C1F-D7AE1552607B}</Project>
       <Name>P.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808030703154_init mysql.resx">
-      <DependentUpon>201808030703154_init mysql.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\P.PContext\P.PContext.csproj">
+      <Project>{04c4c1f3-f0a5-428f-8855-9eb65efc3f4c}</Project>
+      <Name>P.PContext</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

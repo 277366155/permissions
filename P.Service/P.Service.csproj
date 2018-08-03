@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{04C4C1F3-F0A5-428F-8855-9EB65EFC3F4C}</ProjectGuid>
+    <ProjectGuid>{B371F2C3-7666-4859-A758-627F0FFAB0CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>P.PContext</RootNamespace>
-    <AssemblyName>P.PContext</AssemblyName>
+    <RootNamespace>P.Service</RootNamespace>
+    <AssemblyName>P.Service</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -56,6 +56,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,23 +65,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseContext.cs" />
-    <Compile Include="ContextFactory.cs" />
-    <Compile Include="Extensions\DbContextExtensions.cs" />
-    <Compile Include="Interface\IRepository.cs" />
-    <Compile Include="Interface\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201808030703154_init mysql.cs" />
-    <Compile Include="Migrations\201808030703154_init mysql.Designer.cs">
-      <DependentUpon>201808030703154_init mysql.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="CoreServiceBase.cs" />
+    <Compile Include="CoreService\AccountService.cs" />
+    <Compile Include="CoreService\ModuleService.cs" />
+    <Compile Include="CoreService\PermissionService.cs" />
+    <Compile Include="CoreService\RoleService.cs" />
+    <Compile Include="CoreService\UserGroupService.cs" />
+    <Compile Include="CoreService\UserService.cs" />
+    <Compile Include="Interface\IAccountService.cs" />
+    <Compile Include="Interface\IModuleService.cs" />
+    <Compile Include="Interface\IPermissionService.cs" />
+    <Compile Include="Interface\IRoleService.cs" />
+    <Compile Include="Interface\IUserGroupService.cs" />
+    <Compile Include="Interface\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryBase.cs" />
-    <Compile Include="UnitOfWork.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\P.Common\P.Common.csproj">
@@ -91,11 +89,18 @@
       <Project>{F3FCDCCC-6E26-4621-9C1F-D7AE1552607B}</Project>
       <Name>P.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\P.PContext\P.PContext.csproj">
+      <Project>{04C4C1F3-F0A5-428F-8855-9EB65EFC3F4C}</Project>
+      <Name>P.PContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\P.Repository\P.Repository.csproj">
+      <Project>{F30C0898-408A-495F-86CB-0CA337EF3828}</Project>
+      <Name>P.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808030703154_init mysql.resx">
-      <DependentUpon>201808030703154_init mysql.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

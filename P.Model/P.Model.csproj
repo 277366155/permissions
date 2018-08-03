@@ -53,9 +53,16 @@
     <Compile Include="DBModel\User.cs" />
     <Compile Include="DBModel\UserGroup.cs" />
     <Compile Include="ResultModel\ResultType.cs" />
+    <Compile Include="ViewModel\CheckBoxVM.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\ModuleVM.cs" />
+    <Compile Include="ViewModel\PermissionVM.cs" />
+    <Compile Include="ViewModel\RoleVM.cs" />
+    <Compile Include="ViewModel\SideBarMenuVM.cs" />
+    <Compile Include="ViewModel\UserGroupVM.cs" />
+    <Compile Include="ViewModel\UserVM.cs" />
+    <Compile Include="ViewModel\ZTreeVM.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

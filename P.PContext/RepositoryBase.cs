@@ -5,12 +5,13 @@ using System.Linq;
 using System.Linq.Expressions;
 using EntityFramework.Extensions;
 using P.Common;
+using P.Common.Tools;
 using P.Model;
 using P.PContext.Interface;
 
 namespace P.PContext
 {
-    public abstract class EFRepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : EntityBase<TKey>
+    public abstract class RepositoryBase<TEntity, TKey> : IRepository<TEntity, TKey> where TEntity : EntityBase<TKey>
     {
         /// <summary>
         /// 获取当前线程实例

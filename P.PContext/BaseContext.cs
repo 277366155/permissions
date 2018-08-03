@@ -3,6 +3,7 @@ using System.Data.Entity;
 
 namespace P.PContext
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class BaseContext:DbContext
     {
         public BaseContext() : base("DbConn")

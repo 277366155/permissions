@@ -42,7 +42,7 @@ namespace P.Web
             builder.RegisterType<UserGroupService>().As<IUserGroupService>().InstancePerHttpRequest();
             builder.RegisterType<PermissionService>().As<IPermissionService>().InstancePerHttpRequest();
             builder.RegisterType<BaseContext>().As<DbContext>().InstancePerHttpRequest();
-            builder.RegisterType<IUnitOfWork>().As<IUnitOfWork>().InstancePerHttpRequest();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerHttpRequest();
 
             builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerHttpRequest();
             builder.RegisterType<UserGroupRepository>().As<IUserGroupRepository>().InstancePerHttpRequest();

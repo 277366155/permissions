@@ -1,10 +1,11 @@
 ﻿using P.Model;
 using P.PContext;
 using P.PContext.Interface;
+using P.Repository.Interface;
 using System;
 
 
-namespace P.Repository.Interface.Impl
+namespace P.Repository.Impl
 {
     /// <summary>
     ///   仓储操作层实现——角色信息

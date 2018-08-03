@@ -6,8 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Linq;
+using P.Repository.Interface;
 
-namespace P.Repository.Interface.Impl
+namespace P.Repository.Impl
 {
     /// <summary>
     ///   仓储操作层实现——权限

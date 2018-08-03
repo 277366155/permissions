@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Permissions
+namespace P.Web
 {
     public class RouteConfig
     {
@@ -16,8 +12,9 @@ namespace Permissions
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "P.Web.Areas.Common.Controllers" }
+            ).DataTokens.Add("Area", "Common");
         }
     }
 }

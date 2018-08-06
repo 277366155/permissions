@@ -74,6 +74,7 @@
     <Compile Include="Exceptions\ComponentException.cs" />
     <Compile Include="Exceptions\DataAccessException.cs" />
     <Compile Include="Exceptions\EnumExtension.cs" />
+    <Compile Include="Exceptions\ExpressionExtension.cs" />
     <Compile Include="Exceptions\ObjectExtension.cs" />
     <Compile Include="Tools\AutofacHelper.cs" />
     <Compile Include="Tools\CacheHelper.cs" />

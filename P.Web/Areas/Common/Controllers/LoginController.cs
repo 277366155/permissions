@@ -1,9 +1,10 @@
-﻿using P.Common.Exceptions;
+﻿using System;
+using System.Web.Mvc;
+using P.Common.Exceptions;
 using P.Model;
 using P.Model.ViewModel;
 using P.Service.Interface;
-using System;
-using System.Web.Mvc;
+
 
 namespace P.Web.Areas.Common.Controllers
 {

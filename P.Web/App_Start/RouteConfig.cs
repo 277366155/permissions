@@ -12,9 +12,16 @@ namespace P.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional },
+                defaults: new { area = "Common", controller = "Login", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "P.Web.Areas.Common.Controllers" }
             ).DataTokens.Add("Area", "Common");
+
+            routes.MapRoute(
+                           name: "comm_Default",
+                           url: "Common/{controller}/{action}/{id}",
+                           defaults: new { area = "Common", controller = "Login", action = "Index", id = UrlParameter.Optional },
+                           namespaces: new string[] { "P.Web.Areas.Common.Controllers" }
+                       ).DataTokens.Add("Area", "Common");
         }
     }
 }

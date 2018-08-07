@@ -69,9 +69,9 @@
     <Compile Include="Extensions\DbContextExtensions.cs" />
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Interface\IUnitOfWork.cs" />
-    <Compile Include="Migrations\201808030703154_init mysql.cs" />
-    <Compile Include="Migrations\201808030703154_init mysql.Designer.cs">
-      <DependentUpon>201808030703154_init mysql.cs</DependentUpon>
+    <Compile Include="Migrations\201808070847526_InitTable.cs" />
+    <Compile Include="Migrations\201808070847526_InitTable.Designer.cs">
+      <DependentUpon>201808070847526_InitTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,8 +93,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808030703154_init mysql.resx">
-      <DependentUpon>201808030703154_init mysql.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808070847526_InitTable.resx">
+      <DependentUpon>201808070847526_InitTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

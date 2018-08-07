@@ -21,18 +21,18 @@ namespace P.PContext.Migrations
             #region 模块管理
             List<Module> modules = new List<Module>
             {
-                new Module { Id = 1, ParentId = 0, Name = "授权管理", Code = 200,LinkUrl="#",  Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now},
-                new Module { Id = 2, ParentId = 1, Name = "角色管理", LinkUrl = "~/Member/Role/Index",  Code = 201,Description = null, IsMenu = true, Enabled = true, CreateTime = DateTime.Now},
-                new Module { Id = 3, ParentId = 1, Name = "用户管理", LinkUrl = "~/Member/User/Index", Code = 202, Description = null, IsMenu = true, Enabled = true, CreateTime = DateTime.Now },
-                new Module { Id = 4, ParentId = 1, Name = "模块管理", LinkUrl = "~/Member/Module/Index",  Code = 204, Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now },
-                new Module { Id = 5, ParentId = 1, Name = "权限管理", LinkUrl = "~/Member/Permission/Index",  Code = 205, Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now },
-                 new Module { Id = 6, ParentId = 0, Name = "系统应用", LinkUrl = "#",  Code = 300,  Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now },
+                new Module { Id = 1, ParentId = null, Name = "授权管理", Code = 200,LinkUrl="#",  Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now},
+                new Module { Id = 2, ParentId = 1, Name = "角色管理", LinkUrl = "~/Sys/Role/Index",  Code = 201,Description = null, IsMenu = true, Enabled = true, CreateTime = DateTime.Now},
+                new Module { Id = 3, ParentId = 1, Name = "用户管理", LinkUrl = "~/Sys/User/Index", Code = 202, Description = null, IsMenu = true, Enabled = true, CreateTime = DateTime.Now },
+                new Module { Id = 4, ParentId = 1, Name = "模块管理", LinkUrl = "~/Sys/Module/Index",  Code = 204, Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now },
+                new Module { Id = 5, ParentId = 1, Name = "权限管理", LinkUrl = "~/Sys/Permission/Index",  Code = 205, Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now },
+                 new Module { Id = 6, ParentId =null, Name = "系统应用", LinkUrl = "#",  Code = 300,  Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now },
                 new Module { Id = 7, ParentId = 6, Name = "操作日志管理", LinkUrl = "#",Code = 301,Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now },
-                new Module { Id = 8, ParentId = 1, Name = "用户组管理", LinkUrl = "~/Member/UserGroup/Index",  Code = 203, Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now }
+                new Module { Id = 8, ParentId = 1, Name = "用户组管理", LinkUrl = "~/Sys/UserGroup/Index",  Code = 203, Description = null, IsMenu = true, Enabled = true,  CreateTime = DateTime.Now }
                 //~/SysConfig/OperateLog/Index
             };
-            DbSet<Module> moduleSet = context.Set<Module>();
-            moduleSet.AddOrUpdate(t => new { t.Name }, modules.ToArray());
+
+            context.Modules.AddOrUpdate(t => new { t.Id }, modules.ToArray());
             context.SaveChanges();
             #endregion
 
@@ -82,8 +82,7 @@ namespace P.PContext.Migrations
              new Permission{Id=24, Name="设置角色",Code=EnumPermissionCode.SetRolesUserGroup.ToString(), Description="描述" ,Enabled=true,CreateTime=DateTime.Now,Module=modules[7]}
 	         #endregion
             };
-            DbSet<Permission> permissionSet = context.Set<Permission>();
-            permissionSet.AddOrUpdate(m => new { m.Id }, permissionSet.ToArray());
+            context.Permissions.AddOrUpdate(m => new { m.Id }, permissions.ToArray());
             context.SaveChanges();
             #endregion
 
@@ -103,8 +102,8 @@ namespace P.PContext.Migrations
                 new Role { Id=11,  RoleName = "普通角色9", Description="普通角色9",Enabled=true,OrderSort=1,CreateTime=DateTime.Now },
                 new Role { Id=12,  RoleName = "普通角色10", Description="普通角色10",Enabled=true,OrderSort=1,CreateTime=DateTime.Now }
             };
-            DbSet<Role> roleSet = context.Set<Role>();
-            roleSet.AddOrUpdate(m => new { m.RoleName }, roles.ToArray());
+            
+            context.Roles.AddOrUpdate(m => new { m.RoleName }, roles.ToArray());
             context.SaveChanges();
             #endregion
 
@@ -113,9 +112,8 @@ namespace P.PContext.Migrations
             {
                 new User { Id=1, UserName = "admin", Password = "e10adc3949ba59abbe56e057f20f883e", Email = "123456789@qq.com", TrueName = "管理员",Phone="18181818181",Address="广东广州市天河区科韵路XX街XX号XXX房X号" ,Enabled=true,Roles=new List<Role>{roles[1]} },
                 new User { Id=2, UserName = "xiaowu", Password = "e10adc3949ba59abbe56e057f20f883e", Email = "11111@1111.com", TrueName = "小吴",Phone="18181818181",Address="广东广州市天河区科韵路XX街X广东广州市天河区科韵路XX街XX号XXX房X号",Enabled=true,Roles=new List<Role>{roles[1]} }
-            };
-            DbSet<User> memberSet = context.Set<User>();
-            memberSet.AddOrUpdate(m => new { m.UserName }, members.ToArray());
+            };           
+            context.Users.AddOrUpdate(m => new { m.Id }, members.ToArray());
             context.SaveChanges();
             #endregion
 
@@ -125,8 +123,8 @@ namespace P.PContext.Migrations
                 new UserGroup { Id=1, GroupName = "开发组",Description = "开发人员组",Enabled=true,Roles=new List<Role>{roles[1]},OrderSort = 1,Users = new List<User>(){members[0]}},
                 new UserGroup { Id=2, GroupName = "项目经理组", Description = "项目经理组",Enabled=true,Roles=new List<Role>{roles[1]},OrderSort = 2,Users = new List<User>(){members[1]}}
             };
-            DbSet<UserGroup> userGroupsSet = context.Set<UserGroup>();
-            userGroupsSet.AddOrUpdate(m => new { m.GroupName }, userGroups.ToArray());
+
+            context.UserGroups.AddOrUpdate(m => new { m.Id }, userGroups.ToArray());
             context.SaveChanges();
             #endregion
 

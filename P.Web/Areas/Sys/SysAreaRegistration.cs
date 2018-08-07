@@ -17,7 +17,8 @@ namespace P.Web.Areas.Sys
             context.MapRoute(
                 "Sys_default",
                 "Sys/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                new string[] { "P.Web.Areas.Sys.Controllers" }
             );
         }
     }

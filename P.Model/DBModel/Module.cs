@@ -15,7 +15,7 @@ namespace P.Model
             this.Permissions = new List<Permission>();
             this.ChildModules = new List<Module>();
         }
-
+        
         [Description("父模块Id")]
         public int? ParentId { get; set; }
         [Required]
@@ -37,7 +37,7 @@ namespace P.Model
         [Description("是否激活")]
         public bool Enabled { get; set; }
 
-        public virtual Module ParentModule { get; set; }
+        public virtual Module Parent { get; set; }
 
         public virtual ICollection<Module> ChildModules { get; set; }
 

@@ -3,7 +3,7 @@ namespace P.PContext.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initmysql : DbMigration
+    public partial class InitTable : DbMigration
     {
         public override void Up()
         {
@@ -21,11 +21,10 @@ namespace P.PContext.Migrations
                         Enabled = c.Boolean(nullable: false),
                         CreateTime = c.DateTime(nullable: false, precision: 0),
                         UpdateTime = c.DateTime(nullable: false, precision: 0),
-                        ParentModule_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Modules", t => t.ParentModule_Id)
-                .Index(t => t.ParentModule_Id);
+                .ForeignKey("dbo.Modules", t => t.ParentId)
+                .Index(t => t.ParentId);
             
             CreateTable(
                 "dbo.Permissions",
@@ -154,7 +153,7 @@ namespace P.PContext.Migrations
             DropForeignKey("dbo.RolePermissions", "Permission_Id", "dbo.Permissions");
             DropForeignKey("dbo.RolePermissions", "Role_Id", "dbo.Roles");
             DropForeignKey("dbo.Permissions", "ModuleId", "dbo.Modules");
-            DropForeignKey("dbo.Modules", "ParentModule_Id", "dbo.Modules");
+            DropForeignKey("dbo.Modules", "ParentId", "dbo.Modules");
             DropIndex("dbo.UserUserGroups", new[] { "UserGroup_Id" });
             DropIndex("dbo.UserUserGroups", new[] { "User_Id" });
             DropIndex("dbo.UserRoles", new[] { "Role_Id" });
@@ -164,7 +163,7 @@ namespace P.PContext.Migrations
             DropIndex("dbo.RolePermissions", new[] { "Permission_Id" });
             DropIndex("dbo.RolePermissions", new[] { "Role_Id" });
             DropIndex("dbo.Permissions", new[] { "ModuleId" });
-            DropIndex("dbo.Modules", new[] { "ParentModule_Id" });
+            DropIndex("dbo.Modules", new[] { "ParentId" });
             DropTable("dbo.UserUserGroups");
             DropTable("dbo.UserRoles");
             DropTable("dbo.UserGroupRoles");

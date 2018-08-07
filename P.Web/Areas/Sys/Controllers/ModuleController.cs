@@ -1,20 +1,19 @@
-﻿using P.Model;
+﻿using Newtonsoft.Json;
+using P.Common.Exceptions;
+using P.Common.Tools;
+using P.Model;
+using P.Model.Enum;
 using P.Model.ViewModel;
 using P.Service.Interface;
 using P.Web.Extension.Common;
 using P.Web.Extension.Filters;
 using System;
-using System.Web;
 using System.Collections.Generic;
+//using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web.Mvc;
-using System.Data.Entity.SqlServer;
-using P.Common.Exceptions;
-using Newtonsoft.Json;
-using P.Common.Tools;
-using P.Model.Enum;
-
+ 
 namespace P.Web.Areas.Sys.Controllers
 {
     public class ModuleController : Controller
@@ -60,7 +59,7 @@ namespace P.Web.Areas.Sys.Controllers
             var vm = new ModuleVM();
             ViewBag.ParentModuleList = _moduleService.Modules
                                         .Where(c => c.IsMenu == true && c.Enabled == true && c.ParentId == null)
-                                        .Select(c => new SelectListItem() { Text = c.Name, Value = SqlFunctions.StringConvert((double)c.Id).Trim() })
+                                        .Select(c => new SelectListItem() { Text = c.Name, Value = c.Id.ToString() })
                                         .ToList();
             return PartialView(vm);
 
@@ -85,7 +84,7 @@ namespace P.Web.Areas.Sys.Controllers
             if (module == null) return PartialView("Create", new ModuleVM());
             ViewBag.ParentModuleList = _moduleService.Modules
                             .Where(c => c.IsMenu == true && c.Enabled == true && c.ParentId == null)
-                            .Select(c => new SelectListItem() { Text = c.Name, Value = SqlFunctions.StringConvert((double)c.Id).Trim(), Selected = (module.ParentId.HasValue && (module.ParentId.Value == c.Id)) })
+                            .Select(c => new SelectListItem() { Text = c.Name, Value =c.Id.ToString(), Selected = (module.ParentId.HasValue && (module.ParentId.Value == c.Id)) })
                             .ToList();
             var model = new ModuleVM()
             {
@@ -136,7 +135,6 @@ namespace P.Web.Areas.Sys.Controllers
         [NonAction]
         private void GetButtonPermissions()
         {
-           
             string userId = ((System.Web.Security.FormsIdentity)(HttpContext.User.Identity)).Ticket.UserData;
             List<Permission> permissionCache =
                 (List<Permission>)CacheHelper.GetCache(CacheKey.StrPermissionsByUid + "_" + userId);

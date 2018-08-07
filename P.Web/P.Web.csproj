@@ -243,14 +243,26 @@
     <Content Include="Areas\Common\Views\Login\Index.cshtml" />
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Sys\Views\web.config" />
+    <Content Include="Areas\Sys\Views\Module\Create.cshtml" />
+    <Content Include="Areas\Sys\Views\Module\Index.cshtml" />
+    <Content Include="Areas\Sys\Views\Permission\Create.cshtml" />
+    <Content Include="Areas\Sys\Views\Permission\Index.cshtml" />
+    <Content Include="Areas\Sys\Views\Role\AuthorizePermission.cshtml" />
+    <Content Include="Areas\Sys\Views\Role\Create.cshtml" />
+    <Content Include="Areas\Sys\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Sys\Views\Shared\_SetCheckBox.cshtml" />
+    <Content Include="Areas\Sys\Views\Shared\_SettingModal.cshtml" />
+    <Content Include="Areas\Sys\Views\UserGroup\Create.cshtml" />
+    <Content Include="Areas\Sys\Views\UserGroup\Index.cshtml" />
+    <Content Include="Areas\Sys\Views\User\Create.cshtml" />
+    <Content Include="Areas\Sys\Views\User\Index.cshtml" />
+    <Content Include="Areas\Sys\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="Scripts\AdminLTE2.3.0\bootstrap\css\bootstrap.css" />
     <Content Include="Scripts\AdminLTE2.3.0\bootstrap\css\bootstrap.min.css" />
     <Content Include="Scripts\AdminLTE2.3.0\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Scripts\AdminLTE2.3.0\bootstrap\js\bootstrap.js" />
     <Content Include="Scripts\AdminLTE2.3.0\bootstrap\js\bootstrap.min.js" />
     <Content Include="Scripts\AdminLTE2.3.0\bootstrap\js\npm.js" />
-    <Content Include="Scripts\AdminLTE2.3.0\dist\css\AdminLTE.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\AdminLTE.min.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-black-light.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-black-light.min.css" />
@@ -258,7 +270,6 @@
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-black.min.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-blue-light.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-blue-light.min.css" />
-    <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-blue.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-blue.min.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-green-light.css" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\css\skins\skin-green-light.min.css" />
@@ -307,7 +318,6 @@
     <Content Include="Scripts\AdminLTE2.3.0\dist\img\user7-128x128.jpg" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\img\user8-128x128.jpg" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\img\yige.jpg" />
-    <Content Include="Scripts\AdminLTE2.3.0\dist\js\app.js" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\js\app.min.js" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\js\demo.js" />
     <Content Include="Scripts\AdminLTE2.3.0\dist\js\pages\dashboard.js" />
@@ -795,7 +805,6 @@
     <Content Include="Scripts\AdminLTE2.3.0\plugins\daterangepicker\daterangepicker.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\daterangepicker\moment.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\daterangepicker\moment.min.js" />
-    <Content Include="Scripts\AdminLTE2.3.0\plugins\fastclick\fastclick.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\fastclick\fastclick.min.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\flot\excanvas.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\flot\excanvas.min.js" />
@@ -871,7 +880,6 @@
     <Content Include="Scripts\AdminLTE2.3.0\plugins\iCheck\futurico\futurico%402x.png" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\iCheck\futurico\futurico.css" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\iCheck\futurico\futurico.png" />
-    <Content Include="Scripts\AdminLTE2.3.0\plugins\iCheck\icheck.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\iCheck\icheck.min.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\iCheck\line\aero.css" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\iCheck\line\blue.css" />
@@ -964,9 +972,7 @@
     <Content Include="Scripts\AdminLTE2.3.0\plugins\ionslider\ion.rangeSlider.min.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\ionslider\ion.rangeSlider.skinFlat.css" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\ionslider\ion.rangeSlider.skinNice.css" />
-    <Content Include="Scripts\AdminLTE2.3.0\plugins\jQueryUI\jquery-ui.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\jQueryUI\jquery-ui.min.js" />
-    <Content Include="Scripts\AdminLTE2.3.0\plugins\jQuery\jquery-2.1.4.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\jQuery\jQuery-2.1.4.min.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
@@ -1023,7 +1029,6 @@
     <Content Include="Scripts\AdminLTE2.3.0\plugins\select2\select2.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\select2\select2.min.css" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\select2\select2.min.js" />
-    <Content Include="Scripts\AdminLTE2.3.0\plugins\slimScroll\jquery.slimscroll.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\slimScroll\jquery.slimscroll.min.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\sparkline\jquery.sparkline.js" />
     <Content Include="Scripts\AdminLTE2.3.0\plugins\sparkline\jquery.sparkline.min.js" />
@@ -1034,8 +1039,6 @@
     <Content Include="Scripts\Bootbox\bootbox.js" />
     <Content Include="Scripts\bootstraptable\dist\bootstrap-table-locale-all.js" />
     <Content Include="Scripts\bootstraptable\dist\bootstrap-table-locale-all.min.js" />
-    <Content Include="Scripts\bootstraptable\dist\bootstrap-table.css" />
-    <Content Include="Scripts\bootstraptable\dist\bootstrap-table.js" />
     <Content Include="Scripts\bootstraptable\dist\bootstrap-table.min.css" />
     <Content Include="Scripts\bootstraptable\dist\bootstrap-table.min.js" />
     <Content Include="Scripts\bootstraptable\dist\extensions\accent-neutralise\bootstrap-table-accent-neutralise.js" />
@@ -1154,7 +1157,6 @@
     <Content Include="Scripts\bootstraptable\dist\locale\bootstrap-table-ur-PK.min.js" />
     <Content Include="Scripts\bootstraptable\dist\locale\bootstrap-table-vi-VN.js" />
     <Content Include="Scripts\bootstraptable\dist\locale\bootstrap-table-vi-VN.min.js" />
-    <Content Include="Scripts\bootstraptable\dist\locale\bootstrap-table-zh-CN.js" />
     <Content Include="Scripts\bootstraptable\dist\locale\bootstrap-table-zh-CN.min.js" />
     <Content Include="Scripts\bootstraptable\dist\locale\bootstrap-table-zh-TW.js" />
     <Content Include="Scripts\bootstraptable\dist\locale\bootstrap-table-zh-TW.min.js" />
@@ -1171,9 +1173,7 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.ztree.all-3.5.js" />
     <Content Include="Scripts\jquery.ztree.all-3.5.min.js" />
@@ -1181,7 +1181,6 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Toastr\toastr.css" />
     <Content Include="Scripts\Toastr\toastr.js.map" />
     <None Include="Scripts\_references.js" />
     <Content Include="Scripts\Toastr\toastr.min.css" />
@@ -1197,6 +1196,10 @@
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
     <Compile Include="Areas\Common\Controllers\LoginController.cs" />
     <Compile Include="Areas\Sys\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\Sys\Controllers\PermissionController.cs" />
+    <Compile Include="Areas\Sys\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Sys\Controllers\UserController.cs" />
+    <Compile Include="Areas\Sys\Controllers\UserGroupController.cs" />
     <Compile Include="Areas\Sys\SysAreaRegistration.cs" />
     <Compile Include="Extension\Common\DataSourceHelper.cs" />
     <Compile Include="Extension\Common\ValidationHelper.cs" />
@@ -1231,8 +1234,6 @@
     <Folder Include="Areas\Common\Models\" />
     <Folder Include="Areas\Common\Views\Shared\" />
     <Folder Include="Areas\Sys\Models\" />
-    <Folder Include="Areas\Sys\Views\Module\" />
-    <Folder Include="Areas\Sys\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

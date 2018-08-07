@@ -33,7 +33,7 @@ namespace P.Web.Areas.Common.Controllers
                 if (result.ResultType == ResultType.Success)
                 {
                     //  return Redirect(Url.Action("Index", "Home"));
-                    return RedirectToAction("Index", "Home");
+                    return  RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", msg);
                 return View(loginVM);

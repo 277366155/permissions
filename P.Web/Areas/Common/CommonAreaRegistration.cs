@@ -18,7 +18,7 @@ namespace P.Web.Areas.Common
                 "Common_default",
                 "Common/{controller}/{action}/{id}",
                 new {controller="Login", action = "Index", id = UrlParameter.Optional },
-                new string[] { "WY.RMS.Web.Areas.Common.Controllers" }
+                new string[] { "P.Web.Areas.Common.Controllers" }
             );
         }
     }

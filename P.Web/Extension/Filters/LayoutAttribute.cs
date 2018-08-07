@@ -6,11 +6,11 @@ using P.Repository.Interface;
 using P.Service.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Caching;
 using System.Web.Mvc;
-
 
 namespace P.Web.Extension.Filters
 {
@@ -79,7 +79,7 @@ namespace P.Web.Extension.Filters
                         .ToList();
                 if (childModules.Count > 0)
                 {
-                    parentMenuList = childModules.Select(c => c.ParentModule).Distinct().Select(c => new ModuleVM { Id = c.Id, Name = c.Name, LinkUrl = c.LinkUrl, Code = c.Code }).ToList();
+                    parentMenuList = childModules.Select(c => c.Parent).Distinct().Select(c => new ModuleVM { Id = c.Id, Name = c.Name, LinkUrl = c.LinkUrl, Code = c.Code }).ToList();
                     foreach (var item in parentMenuList.OrderBy(c => c.Code).ToList())
                     {
                         var children = childModules.Where(c => c.ParentId == item.Id).OrderBy(c => c.Code).Select(c => new ModuleVM { Name = c.Name, LinkUrl = c.LinkUrl }).ToList();

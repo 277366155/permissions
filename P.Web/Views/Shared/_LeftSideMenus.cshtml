@@ -1,4 +1,4 @@
-﻿@using WY.RMS.ViewModel.Member
+﻿@using P.Model.ViewModel
 @model IEnumerable<ModuleVM>
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -27,7 +27,7 @@
         <!-- /.search form -->
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="active"><a href="/Common/Home/Index"><i class="fa fa-home"></i> <span>主页</span></a></li>
+            <li class="active"><a href="/Home/Index"><i class="fa fa-home"></i> <span>主页</span></a></li>
             @*<li class="header">菜单</li>*@
             <!-- Optionally, you can add icons to the links -->
             @*<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
@@ -67,3 +67,30 @@
     </section>
     <!-- /.sidebar -->
 </aside>
+
+<script type="text/javascript">
+
+    var curUrl = document.location.pathname;
+        var urlstatus = false;
+        $(".sidebar-menu li").each(function () {
+            $(this).removeClass("active");
+            var $href = $(this).find("a").attr("href");
+            if ($href == curUrl) {
+                $(this).addClass("active");
+                urlstatus = true;
+            }
+            if (curUrl == "/") {
+                //$(".nav-list li").eq(0).addClass("active");
+            }
+        });
+        //遍历所有父级菜单的a标签也就是子菜单
+    $(".sidebar-menu li").each(function() {
+        //判断拥有cur样式的a标签
+        if ($(this).hasClass('active')) {
+            $(this).parents('ul').siblings('a').eq(0).parents('li').addClass('active open');
+            //设置urlstatus变量为true
+            urlstatus = true;
+        }
+    });
+        if (!urlstatus) { $(".nav-list li").eq(0).addClass('active'); }
+</script>

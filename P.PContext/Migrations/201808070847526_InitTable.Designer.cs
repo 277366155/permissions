@@ -7,13 +7,13 @@ namespace P.PContext.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initmysql : IMigrationMetadata
+    public sealed partial class InitTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initmysql));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808030703154_init mysql"; }
+            get { return "201808070847526_InitTable"; }
         }
         
         string IMigrationMetadata.Source
